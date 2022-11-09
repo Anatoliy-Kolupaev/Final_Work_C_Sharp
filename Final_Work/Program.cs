@@ -21,22 +21,36 @@ else
 {
     array = new string[] {"hello", "2", "world", ":-)"};
 }
+Console.WriteLine("Заданный массив: ");
 PrintArray(array);
 int lenghtMax = 3;
-string [] newArray = new string[] {} ;
-string [] result = FillNewArray(array, newArray, lenghtMax);
-PrintArray(result);
-string [] FillNewArray(string[] firstArray, string[] newtArray,int lengthLimit)
+int index = CheckArray(array, lenghtMax);
+string [] newArray = new string[index];
+FillNewArray(array, newArray, lenghtMax);
+Console.WriteLine("Массив длинна которого < либо =3 символам: ");
+PrintArray(newArray);
+
+int CheckArray(string[] array, int lenghtMax)
+{
+  int result = 0;
+  for (int i = 0; i < array.Length; i++)
+  {
+    if (array[i].Length <= lenghtMax) result++;
+  }
+  return result;
+}
+
+void FillNewArray(string[] firstArray, string[] newtArray, int lenghtMax)
 {
     int temp = 0;
      for (int i = 0; i < firstArray.Length; i++)
      {
-        if (firstArray[i].Length <= lengthLimit)
-        
+        if (firstArray[i].Length <= lenghtMax)
+        {
          newArray[temp] = firstArray[i];
-        temp++;
+         temp++;
+        }
      }
-     return newArray;
 }
 
 void PrintArray (string [] array)
