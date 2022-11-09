@@ -42,13 +42,13 @@ int CheckArray(string[] array, int lenghtMax)
 
 void FillNewArray(string[] firstArray, string[] newtArray, int lenghtMax)
 {
-    int temp = 0;
+    int res = 0;
      for (int i = 0; i < firstArray.Length; i++)
      {
         if (firstArray[i].Length <= lenghtMax)
         {
-         newArray[temp] = firstArray[i];
-         temp++;
+         newArray[res] = firstArray[i];
+         res++;
         }
      }
 }
